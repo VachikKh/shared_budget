@@ -1,6 +1,8 @@
 # shared_budget
 This code calculates individual consumes for shared shopping for a group of people.
-This initial version if for three people
+
+This initial version if for three people.
+
 Just call from you terminal with -d parameter for data 
 
 `python mail.py -d data.csv`
