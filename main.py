@@ -30,5 +30,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     with warnings.catch_warnings():
     	warnings.simplefilter("ignore")
-    	print(shared_budget("data.csv"))
+    	print(shared_budget(args.data))
     
