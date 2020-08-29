@@ -19,9 +19,15 @@ def shared_budget(filename="data.csv"):
 
     consume_dict = {}
     for consumer in all_consumers:
+        # adding 0 amount padding for consumers to avoid the not invest but consume problem
+        df_consumer = df.iloc[0]
+        df_consumer["Amount"] = 0
+        df_consumer["Buyer "] = consumer
+        df = df.append(df_consumer)
+        # creating dict of consumer:overall consumption 
         consume_dict[consumer] = np.sum(df.Amount / df.consumer.apply(lambda x: len(x.split(", "))
         if consumer in x else None))
-
+    # creating dict of consumer: averall contribution 
     investment_dict = pd.DataFrame.to_dict(df.groupby(by="Buyer ").agg("sum"))["Amount"]
     summary_dict = {key: investment_dict[key] - consume_dict.get(key, 0) for key in investment_dict}
     return summary_dict
