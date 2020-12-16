@@ -7,7 +7,7 @@ import warnings
 def shared_budget(filename="data.csv"):
     df = pd.read_csv(filename)
     # Doing some data processing to replace nonconsumer with consumer
-    df.rename(columns={"-Consumer": "nonConsumer"}, inplace=True)
+    #df.rename(columns={"-Consumer": "nonConsumer"}, inplace=True)
     all_consumers = ["Նարեկ", "Վաչիկ", "Մհեր"]
     df.nonConsumer[df.nonConsumer.isna()] = ", ".join(all_consumers)
     df.nonConsumer[df.nonConsumer == "Բոլորը"] = ", ".join(all_consumers)
