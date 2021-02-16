@@ -1,7 +1,7 @@
 # shared_budget
 This code calculates individual consumes for shared shopping for a group of people.
 
-This initial version if for three people.
+This initial version is for three people.
 
 Just call from you terminal with -d parameter for data 
 
